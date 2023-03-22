@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="PortfolioV2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/8ee69b5be1.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>Skills</title>
+    <style>
+      body{
+        background-color: black;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartMenu {
+        width: 100vw;
+        height: 40px;
+        background: #1A1A1A;
+        color: rgb(0, 0, 0);
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      .chartCard {
+        width: 100vw;
+        height: calc(100vh - 40px);
+        background: rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      @media (max-width: 576px) {
+    .chartCard {
+        display:flex;
+        align-items: center;
+        height: auto;
+        margin-top: 100px;
+        width: 300px;
+        margin-left: 45px;}
+    
+     }
+      .chartBox {
+        width: 700px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px rgb(255, 255, 255);
+        background: rgb(0, 0, 0);
+      }
+      h1{
+        color: white;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-md p-4">
+        <div class="container-fluid">
+          
+            <a class="navbar-brand" href="portfolioV2.html">.arian.aghamirza()</a>
+           
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navItems" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="container social d-flex flex-wrap">
+       
+           <div id="icons" class="">
+
+             <a class="mx-2" id="insta" href="https://www.instagram.com/arian_aghamirza/"><i class="fa-brands fa-instagram"></i></a>
+             <a class="mx-2" id="twitter" href="https://twitter.com/Arian_M1rza"><i class="fa-brands fa-twitter "></i></a>
+             <a class="mx-2" id="linkedin" href="https://www.linkedin.com/in/arian-aghamirza-00bb9a217/"><i class="fa-brands fa-linkedin-in"></i></a>
+             <a id="GIT" class="mx-2" href="https://github.com/ArianMirza"><i class="fa-brands fa-github-alt"></i></a>
+             <a id="facebook" class="mx-2" href="https://www.facebook.com/profile.php?id=100009122848498"><i class="fa-brands fa-facebook-f"></i></a>
+             <script>$("a").attr("target", "_blank"); </script>
+
+             </div>         
+
+          </div>
+
+          <div class="collapse navbar-collapse" id="navItems">
+            <div class="navbar-nav ms-auto"> <!--makes links sit to the right-->
+              <a class="nav-link" href="portfolioV2.html">.about.me()</a>
+              <a class="nav-link" href="portfolioV2.html">.skills()</a>
+              <a class="nav-link" href="portfolioV2.html">.projects()</a>
+              <a class="nav-link" href="portfolioV2.html">.contact.me()</a>
+            </div>
+          </div>   
+        </div>
+</nav>
+
+    <div class="chartCard">
+        
+      <div class="chartBox mx-auto ">
+        <h1>Score from 1-10</h1>
+        <canvas id="myChart" ></canvas>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+    <script>
+    // setup 
+    const data = {
+      labels: ['JavaScript', 'HTML', 'CSS', 'BOOTSTRAP', 'GIT'],
+      datasets: [{
+        data: [2, 5, 6, 4, 2,],
+        backgroundColor: [
+          '#F0DB4F',
+          '#e34c26',
+          '#264de4',
+          '#563d7c',
+          '#564e4e',
+        ],
+        borderColor: [
+          '#FFFFFF',
+          '#FFFFFF',
+          '#FFFFFF',
+          '#FFFFFF',
+          '#FFFFFF',
+        ],
+        borderWidth: 1,
+        borderSkipped: false,
+        borderRadius: 5,
+        barPercentage: 0.6,
+        categoryPercentage: 0.9
+      }]
+    };
+
+    // ProgressBar plugin block
+    const progressBar = {
+        id: "progressBar",
+        beforeDatasetDraw(chart, args, pluginOptions) {
+            const {ctx, data, chartArea: {top, bottom, left, right, width, height},
+              scales: {x, y} }= chart;
+
+              ctx.save();
+
+              data.datasets[0].data.forEach((datapoint, index) => {
+                //labelText
+                const fontSizeLabel = 12;
+                ctx.font = `${fontSizeLabel}px monospace`;
+                ctx.fillStyle = '#FFFFFF';
+                ctx.textAlign = "left"; 
+                ctx.textBaseline = "middle";
+                ctx.fillText(data.labels[index], left, y.getPixelForValue(index) - fontSizeLabel - 13);
+
+                //ValueText
+                const fontSizeDatapoint = 13;
+                ctx.font = `bold ${fontSizeDatapoint}px monospace`;
+                ctx.fillStyle = '#FFFFFF';
+                ctx.textAlign = "right"; 
+                ctx.textBaseline = "middle";
+                ctx.fillText(datapoint, right, y.getPixelForValue(index) - fontSizeDatapoint - 13);
+
+                // bg color progress bar
+                ctx.beginPath();
+                ctx.fillsStyle
+
+              })
+           
+        }
+    }
+
+
+    // config 
+    const config = {
+      type: 'bar',
+      data,
+      options: {
+        indexAxis: "y", 
+        plugins: {
+            legend: {
+                display: false
+            }
+        },
+        scales: {
+            x: {
+            grid:{
+                display: false,
+                drawBorder: false
+            },
+            ticks: {
+                display: false
+            }
+          },
+          y: {
+            beginAtZero: true,
+            grid:{
+                display: false,
+                drawBorder: false
+            },
+            ticks: {
+                display: false,
+            }
+          }
+        }
+      },
+      plugins: [progressBar]
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+
+    // Instantly assign Chart.js version
+    const chartVersion = document.getElementById('chartVersion');
+    chartVersion.innerText = Chart.version;
+    </script>
+
+
+
+
+
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</html>

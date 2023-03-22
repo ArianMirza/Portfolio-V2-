@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="PortfolioV2.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/8ee69b5be1.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <title>Arian's Portfolio</title>
+</head>
+<body>
+ 
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-md p-4 fixed-top">
+        <div class="container-fluid">
+          
+            
+            <a class="navbar-brand" href="#">.arian.aghamirza()</a>
+     
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navItems" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="container social d-flex flex-wrap">
+           <div id="icons" class="">
+
+            <a class="mx-2" id="insta" href="https://www.instagram.com/arian_aghamirza/"><i class="fa-brands fa-instagram"></i></a>
+            <a class="mx-2" id="twitter" href="https://twitter.com/Arian_M1rza"><i class="fa-brands fa-twitter "></i></a>
+            <a class="mx-2" id="linkedin" href="https://www.linkedin.com/in/arian-aghamirza-00bb9a217/"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a id="GIT" class="mx-2" href="https://github.com/ArianMirza"><i class="fa-brands fa-github-alt"></i></a>
+            <a id="facebook" class="mx-2" href="https://www.facebook.com/profile.php?id=100009122848498"><i class="fa-brands fa-facebook-f"></i></a>
+           <script> $("a").attr("target", "_blank"); // Every link goes to another page </script>
+          </div>           
+
+        </div>
+
+          <div class="collapse navbar-collapse" id="navItems">
+            <div class="navbar-nav ms-auto"> <!--makes links sit to the right-->
+              <a class="nav-link" href="#aboutMe">.about.me()</a>
+              <a class="nav-link" href="#skillsSection">.skills()</a>
+              <a class="nav-link" href="#projectSection">.projects()</a>
+              <a class="nav-link" href="#contactFooter">.contact.me()</a>
+            </div>
+          </div>   
+        </div>
+</nav>
+
+<!--About Me Showcase-->
+
+<section id="aboutMe" class=" text-light p-5 text-center">
+<div  class="container">
+<div class="d-sm-flex align-items-center justify-content-between" >
+            <div>
+                <h1>.about.me()</h1> 
+                <p>
+                    In the middle of 2021 i wrote my first 'Hello World' and fell in love with the creativity aspect that is coding,
+                   the possibilities seemed endless and was intriguing.
+                    </p>
+                    <p>
+                     Since then, I've been self-educating my-self in the field of web-development outside of my 
+                     current education in the field of psychology with the hopes of a chance changing career in the near future.
+                     My goals for the future is continue to delveop my skills within formats displayed below and learn new frameworks and coding-languages as I proceed with my continuous learning.
+                    </p>
+                    <p>
+                     I'm open to any opportunities coming my way to learn and grow as a developer,
+                      and would greet and opportunities to join a team and dedicate myself to the 
+                      cause of creating something extraordinary. 
+                    </p>            </div>
+            <img class="img-fluid d-none d-sm-block " src="edarian.png" alt="">
+        </div>
+    </div>    
+</section>
+
+<!--Skills Section-->
+<section id="skillsSection" class="text-light p-5 text-center">
+    <div class="container col-md-12 col-lg-12">
+        <div >
+            <h1>.skills()</h1>
+            <p>    Despite being new to web-development I've managed to learn a lot about CSS,
+                HTML and Javascript Jquery, Ajax and plan on furthuring my self-education within the front-end 
+                field before I enter the backend field to reach my goal of becoming a full stack developer.
+            </p>
+        </div>
+          <div id="skillIcons">
+          <a1 id="JS" href="JS"><i class="fa-brands fa-square-js"></i></a>
+          <a2 id="GIT" href="https://github.com/ArianMirza"><i class="fa-brands fa-github-alt"></i></a>
+          <a3 id="HTML" href="HTML"><i class="fa-brands fa-html5"></i></a><br>
+          <a4 id="CSS" href="CSS"><i class="fa-brands fa-css3-alt"></i></a>
+          <a5 id="BOOTSTRAP" href="BOOTSTRAP"><i class="fa-brands fa-bootstrap"></i></a>
+        </div>
+        <a class="btn btn-light btn-lg" href="skills.html">More info</a> 
+    </div>
+</section>
+
+<!--Project Section-->
+<section id="projectSection" class="p-5 text-center">
+    <div class="container">
+        <h1>.projects()</h1>
+        <div id="portfolioCard" class="card" style="width: 18rem;">
+            <img src="portfolio.png" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Portfolio</h5>
+              <p class="card-text">The first project I ever completed with great satisfaction was this very portfolio with a combination of HTML, CSS/Bootstrap and Javascript.</p>
+      
+              <div class="card-icons">
+              <a id="JS" href="JS"><i class="fa-brands fa-square-js"></i></a>
+              <a id="GIT" href="https://github.com/ArianMirza"><i class="fa-brands fa-github-alt"></i></a>
+              <a id="HTML" href="HTML"><i class="fa-brands fa-html5"></i></a>
+              <a id="CSS" href="CSS"><i class="fa-brands fa-css3-alt"></i></a>
+              <a id="BOOTSTRAP" href="BOOTSTRAP"><i class="fa-brands fa-bootstrap"></i></a>
+              </div>
+              <a href="https://github.com/ArianMirza" class="btn btn-light">See Code</a>
+            </div>
+          </div>
+    </div>
+</section>
+
+<!--Contact Me section-->
+<footer class=" text-white text-center" id="contactFooter" >
+    <div class="contact-container mx-auto">
+     <h1 id="contact">.contact.me()</h1>
+     <form id="contactMeForm" action="https://jsonplaceholder.typicode.com/posts">
+     <input type="text" id="first" name="first" placeholder="First Name" autocomplete="off" required><br>
+     <br>
+     <input type="text" id="second"  name="last" placeholder="last Name" autocomplete="off" required><br>
+     <br>
+     <input type="email" id="email" name="email" placeholder="Email Adress" autocomplete="off" required><br>
+     <br>
+     <textarea cols="60" rows="5" id="message" name="message" placeholder="Enter a message" autocomplete="off"></textarea><br>
+   <button id="send" class="btn" type="submit">Send Message</button>
+  </form>
+   </div><br>
+   <div class="container">
+    <p id="copyright" class="lead">Copyright &copy; 2023 Arian Aghamirza</p>
+   </div>
+ </footer>
+
+
+
+<style>
+  body{
+    background-color: rgb(6, 6, 6);
+  }
+</style>
+</body>   
+
+<script>
+  //Ajax code
+$("#contactMeForm").submit(function(e){
+  e.preventDefault();
+
+  var first = $("#first").val();
+  var last = $("#last").val();
+  var email = $("#email").val();
+  var message = $("#message").val();
+  var url = $(this).attr('action');
+
+  $.post(url, {first:first, last:last, email:email, message:message}).done(function(data){
+      console.log("Post Saved");
+      console.log(data);
+  });
+});
+
+//Jquery code
+</script>
+
+<script src="portfoliov2.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</html>
